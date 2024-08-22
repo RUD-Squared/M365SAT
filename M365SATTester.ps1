@@ -1,6 +1,10 @@
 #Requires -Version 5.1
 #Requires -RunAsAdministrator
-function ExecuteM365SAT
+param (
+        [string]$username,
+        [string]$secret
+    )
+    function ExecuteM365SAT
 {
 	Import-Module .\M365SAT.psd1
 	#Get-M365SATReport -OutPath "C:\Out" -Username "example@example.org" -EnvironmentType AZURE,M365 -BenchmarkVersion "Latest" -Modules "All" -LicenseMode "All" -LicenseLevel "All" -reportType "HTML" -AllowLogging "Warning" -LocalMode -SkipChecks
